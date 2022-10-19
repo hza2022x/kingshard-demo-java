@@ -44,11 +44,11 @@ public class KingshardJdbcDemo {
         conn.close();
     }
 
-    private static Connection getConnection() throws SQLException {
+    private static Connection getConnection() throws Exception {
         String url = "jdbc:mysql://localhost:9696/kingshard?useUnicode=true&characterEncoding=utf8";
         String username = "kingshard";
         String password = "kingshard";
-        //Class.forName("com.mysql.cj.jdbc.Driver"); 不需要
+        Class.forName("com.mysql.jdbc.Driver");
         return DriverManager.getConnection(url, username, password);
     }
 }
